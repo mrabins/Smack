@@ -10,7 +10,7 @@ import UIKit
 
 class ChatVC: UIViewController {
     
-    //Outlets
+    //MARK: Outlets
     
     @IBOutlet weak var menuButton: UIButton!
     
