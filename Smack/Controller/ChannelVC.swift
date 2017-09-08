@@ -10,15 +10,15 @@ import UIKit
 
 class ChannelVC: UIViewController {
     
-    //Mark: Outlets
+    //Mark: Outlets and Actions
     @IBOutlet weak var loginButton: UIButton!
-        @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
-
+        
     }
     
     
@@ -27,6 +27,6 @@ class ChannelVC: UIViewController {
         
     }
     
-
+    
     
 }
