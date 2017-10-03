@@ -13,6 +13,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 //MARK: URL Constants
 let BASE_URL = "https://smackios.herokuapp.com/"
 let URL_REGISTER = "\(BASE_URL)account/register"
+let URL_LOGIN = "\(BASE_URL)account/login"
 
 //MARK: Segues
 let TO_LOGIN = "loginSegue"
@@ -24,3 +25,8 @@ let UNWIND = "unwindToChannel"
 let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
+
+// MARK: Headers
+let HEADER = [
+    "Content-Type": "applcation/json; charset=utf-8"
+]
