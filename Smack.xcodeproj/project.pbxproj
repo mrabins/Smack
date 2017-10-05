@@ -12,6 +12,7 @@
 		1314A58C1F5BC5A000B5968C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1314A58A1F5BC5A000B5968C /* Main.storyboard */; };
 		1314A58E1F5BC5A000B5968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1314A58D1F5BC5A000B5968C /* Assets.xcassets */; };
 		1314A5911F5BC5A000B5968C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1314A58F1F5BC5A000B5968C /* LaunchScreen.storyboard */; };
+		131D3AB21F85EC04003F7EEB /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131D3AB11F85EC04003F7EEB /* UserDataService.swift */; };
 		1323D90C1F6305F5003D4AC7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323D90B1F6305F5003D4AC7 /* AuthService.swift */; };
 		133B42E91F5E6F77005B62F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133B42E81F5E6F77005B62F2 /* Constants.swift */; };
 		133B42EB1F5E75AC005B62F2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133B42EA1F5E75AC005B62F2 /* LoginVC.swift */; };
@@ -31,6 +32,7 @@
 		1314A58D1F5BC5A000B5968C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1314A5901F5BC5A000B5968C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1314A5921F5BC5A000B5968C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		131D3AB11F85EC04003F7EEB /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		1323D90B1F6305F5003D4AC7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		133B42E81F5E6F77005B62F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		133B42EA1F5E75AC005B62F2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1323D90B1F6305F5003D4AC7 /* AuthService.swift */,
+				131D3AB11F85EC04003F7EEB /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				137D852D1F5CAEAB0029F891 /* SWRevealViewController.m in Sources */,
 				1305005D1F6348100074514D /* RoundedButton.swift in Sources */,
 				137D852A1F5CABBA0029F891 /* ChatVC.swift in Sources */,
+				131D3AB21F85EC04003F7EEB /* UserDataService.swift in Sources */,
 				1346AB5A1F5F654200EA4F09 /* CreateAccountVC.swift in Sources */,
 				1323D90C1F6305F5003D4AC7 /* AuthService.swift in Sources */,
 				133B42EB1F5E75AC005B62F2 /* LoginVC.swift in Sources */,
