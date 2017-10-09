@@ -40,9 +40,48 @@ class CreateAccountVC: UIViewController {
         }
     }
     
-    @IBAction func createAccountButtonPressed(_ sender: Any) {
+    func validateEmail(enteredEmailAddress: String) -> Bool {
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailFormat)
+        return emailPredicate.evaluate(with: enteredEmailAddress)
+    }
+    
+    func validateLogin() {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
+        if validateEmail(enteredEmailAddress: emailTextField.text!) == false {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+            alertHandler(title: "Invalid Email", message: "Please Reenter A Valid Email And Try Again")
+        }
+        if (passwordTextField.text?.characters.count)! <= 6 {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+            alertHandler(title: "Password Error", message: "Your Password Does Not Meet Our Standards. Please Ensure You Have At Least 6 Characters And Try again")
+        }
+        if (usernameTextField.text == nil) {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+            alertHandler(title: "Username Error", message: "Please Enter A Username And Try Again")
+        }
+    }
+    
+    func setupView() {
+        activityIndicator.isHidden = true
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceholder])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceholder])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceholder])
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
+    }
+    
+    @IBAction func createAccountButtonPressed(_ sender: Any) {
+        validateLogin()
         guard let name = usernameTextField.text, usernameTextField.text != "" else { return }
         guard let email = emailTextField.text , emailTextField.text != "" else {return }
         guard let password = passwordTextField.text , passwordTextField.text != "" else { return }
@@ -77,24 +116,19 @@ class CreateAccountVC: UIViewController {
         bgColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
         avatarColor = "[\(red), \(green), \(blue), 1]"
         UIView.animate(withDuration: 0.2) {
-            self.userImageView.backgroundColor = self.bgColor
+        self.userImageView.backgroundColor = self.bgColor
         }
     }
+    
     @IBAction func closeButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
-    
-    func setupView() {
-        activityIndicator.isHidden = true
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceholder])
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceholder])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceholder])
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func handleTap() {
-        view.endEditing(true)
+}
+
+extension CreateAccountVC {
+    func alertHandler(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
