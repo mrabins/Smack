@@ -22,6 +22,7 @@
 		137D852D1F5CAEAB0029F891 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ED2B181F5BCF93009D85EF /* SWRevealViewController.m */; };
 		1394506F1F86D22200F62DA9 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1394506E1F86D22200F62DA9 /* AvatarPickerVC.swift */; };
 		139450711F86D3B000F62DA9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139450701F86D3B000F62DA9 /* AvatarCell.swift */; };
+		139450731F86E5D000F62DA9 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139450721F86E5D000F62DA9 /* CircleImage.swift */; };
 		13B3117C1F5D14E800268643 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3117B1F5D14E800268643 /* GradientView.swift */; };
 		8CAA34B8AD67BFBE2342B8F3 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2679C756BED0D73F326564B2 /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		137D852B1F5CABCA0029F891 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		1394506E1F86D22200F62DA9 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		139450701F86D3B000F62DA9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		139450721F86E5D000F62DA9 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		13B3117B1F5D14E800268643 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		13ED2B171F5BCF93009D85EF /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		13ED2B181F5BCF93009D85EF /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				13B3117B1F5D14E800268643 /* GradientView.swift */,
 				1305005C1F6348100074514D /* RoundedButton.swift */,
 				139450701F86D3B000F62DA9 /* AvatarCell.swift */,
+				139450721F86E5D000F62DA9 /* CircleImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				137D852D1F5CAEAB0029F891 /* SWRevealViewController.m in Sources */,
 				1394506F1F86D22200F62DA9 /* AvatarPickerVC.swift in Sources */,
 				1305005D1F6348100074514D /* RoundedButton.swift in Sources */,
+				139450731F86E5D000F62DA9 /* CircleImage.swift in Sources */,
 				137D852A1F5CABBA0029F891 /* ChatVC.swift in Sources */,
 				131D3AB21F85EC04003F7EEB /* UserDataService.swift in Sources */,
 				1346AB5A1F5F654200EA4F09 /* CreateAccountVC.swift in Sources */,
