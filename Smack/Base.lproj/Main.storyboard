@@ -80,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="126" width="375" height="426"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bOq-LX-wVi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChannelCell" id="bOq-LX-wVi">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bOq-LX-wVi" id="rEx-Df-zNU">
@@ -231,12 +231,21 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="Gs6-bh-Ocf" eventType="touchUpInside" id="QLT-xV-JRY"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-No-wkb">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.2901960784" green="0.30196078430000001" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hmi-LF-nmH" firstAttribute="top" secondItem="qvc-Nb-Cwg" secondAttribute="bottom" constant="40" id="1Va-Ba-Ve8"/>
+                            <constraint firstItem="kfn-No-wkb" firstAttribute="centerX" secondItem="ILx-hH-A18" secondAttribute="centerX" id="30p-mb-v1S"/>
                             <constraint firstItem="kjG-Ah-bXy" firstAttribute="trailing" secondItem="hlg-KL-MLr" secondAttribute="trailing" constant="10" id="GLY-hu-CAH"/>
+                            <constraint firstItem="kfn-No-wkb" firstAttribute="centerY" secondItem="ILx-hH-A18" secondAttribute="centerY" constant="-100" id="GYx-wj-i6P"/>
                             <constraint firstItem="n97-3n-k54" firstAttribute="centerX" secondItem="ILx-hH-A18" secondAttribute="centerX" id="KJA-zn-0bT"/>
                             <constraint firstItem="HW8-Xl-ggC" firstAttribute="top" secondItem="hmi-LF-nmH" secondAttribute="bottom" constant="40" id="OnZ-FU-WDK"/>
                             <constraint firstItem="hmi-LF-nmH" firstAttribute="centerX" secondItem="ILx-hH-A18" secondAttribute="centerX" id="UPj-ag-BXm"/>
@@ -249,6 +258,9 @@
                         <viewLayoutGuide key="safeArea" id="kjG-Ah-bXy"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="kfn-No-wkb" id="fRp-QV-LnX"/>
+                        <outlet property="passwordTextField" destination="QNz-R9-zkJ" id="U98-ga-rVC"/>
+                        <outlet property="usernameTextField" destination="IO1-6x-f1x" id="8ao-e9-ooO"/>
                         <segue destination="RTJ-Z2-OaM" kind="show" identifier="toCreateAccount" id="sB6-Di-yrC"/>
                     </connections>
                 </viewController>
