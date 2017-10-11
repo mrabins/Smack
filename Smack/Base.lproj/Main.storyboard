@@ -58,6 +58,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riM-rJ-yNd">
                                 <rect key="frame" x="281" y="88" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="addChannelPressed:" destination="gWf-zu-d3s" eventType="touchUpInside" id="EYa-am-OUo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwQ-fE-7rg">
                                 <rect key="frame" x="105" y="591.5" width="54" height="36"/>
@@ -80,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="126" width="375" height="426"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChannelCell" id="bOq-LX-wVi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" id="bOq-LX-wVi" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bOq-LX-wVi" id="rEx-Df-zNU">
@@ -100,6 +103,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="channelName" destination="UdD-KK-DLT" id="kpt-wz-IB3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -124,6 +130,7 @@
                         <viewLayoutGuide key="safeArea" id="rpg-ZU-Dd3"/>
                     </view>
                     <connections>
+                        <outlet property="channelTableView" destination="rVB-Kz-dz2" id="21J-TC-nJP"/>
                         <outlet property="loginButton" destination="vwQ-fE-7rg" id="GoD-IB-D5S"/>
                         <outlet property="userImage" destination="M3a-ST-lLd" id="OnA-nU-Ntt"/>
                         <segue destination="Gs6-bh-Ocf" kind="show" identifier="loginSegue" id="RYL-VQ-mtb"/>
