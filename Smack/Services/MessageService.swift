@@ -14,6 +14,7 @@ class MessageService {
     static let instance = MessageService()
     
     var channels = [Channel]()
+    var selectedChannel : Channel?
     
     func findAllChannel(completion: @escaping CompletionHandler) {
         Alamofire.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
@@ -24,6 +25,7 @@ class MessageService {
                 do {
                     self.channels = try JSONDecoder().decode([Channel].self, from: data)
                     completion(true)
+                    NotificationCenter.default.post(name: NOTIF_CHANELS_LOADED, object: nil)
                 } catch let error {
                     debugPrint(error as Any)
                 }
@@ -32,5 +34,9 @@ class MessageService {
                 debugPrint(response.result.error as Any)
             }
         }
+    }
+    
+    func clearChannels() {
+        channels.removeAll()
     }
 }
