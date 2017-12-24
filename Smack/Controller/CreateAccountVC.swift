@@ -54,7 +54,7 @@ class CreateAccountVC: UIViewController {
             activityIndicator.stopAnimating()
             alertHandler(title: "Invalid Email", message: "Please Reenter A Valid Email And Try Again")
         }
-        if (passwordTextField.text?.characters.count)! <= 6 {
+        if (passwordTextField.text?.count)! <= 6 {
             activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
             alertHandler(title: "Password Error", message: "Your Password Does Not Meet Our Standards. Please Ensure You Have At Least 6 Characters And Try again")

@@ -14,9 +14,15 @@ class ChatVC: UIViewController {
     
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var channelNameLabel: UILabel!
+    @IBOutlet weak var messageTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.bindToKeyboard()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
+        view.addGestureRecognizer(tap)
         
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -47,13 +53,44 @@ class ChatVC: UIViewController {
     func updateWithChannel() {
         let channelName = MessageService.instance.selectedChannel?.name ?? ""
         channelNameLabel.text = "#\(channelName)"
+        getMessages()
     }
     
     func onLoginGetMessages() {
         MessageService.instance.findAllChannel { (success) in
             if success {
-                // Do something with channels
+                if MessageService.instance.channels.count > 0 {
+                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]
+                    self.updateWithChannel()
+                } else {
+                    self.channelNameLabel.text = "There Are No Channels Yet"
+                }
             }
+        }
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
+    }
+    
+    @IBAction func sendMessagePressed(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            guard let channelId = MessageService.instance.selectedChannel?._id else { return }
+            guard let message = messageTextField.text else { return }
+            
+            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
+                if success {
+                    self.messageTextField.text = ""
+                    self.messageTextField.resignFirstResponder()
+                }
+            })
+        }
+    }
+    
+    func getMessages() {
+        guard let channelId = MessageService.instance.selectedChannel?._id else {return}
+        MessageService.instance.findAllMessageForChannel(channelId: channelId) { (success) in
+            
         }
     }
 }
