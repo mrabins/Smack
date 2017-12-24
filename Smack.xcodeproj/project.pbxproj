@@ -24,7 +24,6 @@
 		135D53BB1F8D8C8A00180D08 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135D53B91F8D8C8A00180D08 /* AddChannelVC.xib */; };
 		1368B2EF1F8C1CBC00714719 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368B2EE1F8C1CBC00714719 /* MessageService.swift */; };
 		1368B2F11F8C1CE900714719 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368B2F01F8C1CE900714719 /* Channel.swift */; };
-		136FF04B1FEF6489008DA83D /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136FF04A1FEF6489008DA83D /* KeyboardBoundView.swift */; };
 		137D852A1F5CABBA0029F891 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D85291F5CABBA0029F891 /* ChatVC.swift */; };
 		137D852C1F5CABCA0029F891 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D852B1F5CABCA0029F891 /* ChannelVC.swift */; };
 		137D852D1F5CAEAB0029F891 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ED2B181F5BCF93009D85EF /* SWRevealViewController.m */; };
@@ -34,6 +33,7 @@
 		139C9E701F8B2D2800964710 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139C9E6E1F8B2D2800964710 /* ProfileVC.swift */; };
 		139C9E711F8B2D2800964710 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139C9E6F1F8B2D2800964710 /* ProfileVC.xib */; };
 		13B0F0211FF04DC5008B0162 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B0F0201FF04DC5008B0162 /* MessageCell.swift */; };
+		13B0F0221FF067B6008B0162 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136FF04A1FEF6489008DA83D /* KeyboardBoundView.swift */; };
 		13B3117C1F5D14E800268643 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3117B1F5D14E800268643 /* GradientView.swift */; };
 		8CAA34B8AD67BFBE2342B8F3 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2679C756BED0D73F326564B2 /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
@@ -355,9 +355,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				136FF04B1FEF6489008DA83D /* KeyboardBoundView.swift in Sources */,
 				13445DFC1F92B8680054A600 /* SocketService.swift in Sources */,
 				139C9E701F8B2D2800964710 /* ProfileVC.swift in Sources */,
+				13B0F0221FF067B6008B0162 /* KeyboardBoundView.swift in Sources */,
 				134A4C961F8C245600CDAD8C /* ChannelCell.swift in Sources */,
 				137D852D1F5CAEAB0029F891 /* SWRevealViewController.m in Sources */,
 				1394506F1F86D22200F62DA9 /* AvatarPickerVC.swift in Sources */,
