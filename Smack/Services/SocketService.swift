@@ -51,7 +51,6 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    
     func getChatMessage(completion: @escaping CompletionHandler) {
         socket.on("messageCreated") { (dataArray, ack) in
             guard let msgBody = dataArray[0] as? String else { return }
@@ -72,4 +71,14 @@ class SocketService: NSObject {
             }
         }
     }
+    
+    func getTypingUsers(_ completionHandler: @escaping (_ typingUsers: [String: String]) -> Void) {
+        socket.on("userTypingUpdate") { (dataArray, ack) in
+            guard let typingUsers = dataArray[0] as? [String: String] else { return }
+            completionHandler(typingUsers)
+        }
+        
+    }
 }
+
+
